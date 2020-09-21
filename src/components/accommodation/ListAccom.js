@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import AddAccom from './AddAccom'; 
  
 class AccomList extends Component {
   state = { listOfAccom: [] }
  
   getAllAccom = () =>{
-    axios.get(`http://localhost:5000/api/accommodation`)
+    axios.get(`http://localhost:5000/api/accommodation`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         listOfAccom: responseFromApi.data
@@ -29,14 +28,15 @@ class AccomList extends Component {
                 <Link to={`/accommodation/${accom._id}`}>
                   <h3>{accom.postname}</h3>
                 </Link>
-                {/* <p style={{maxWidth: '400px'}} >{project.description} </p> */}
+                <p>City: {accom.city}</p>
+                  <p>Size: {accom.size}</p>
+                  <p>Brief description: {accom.description}</p>
+                <hr/>
               </div>
             )})
           }
         </div>
-        <div style={{width: '40%', float:"right"}}>
-            <AddAccom getData={() => this.getAllAccom()}/> {/* <== !!! */}
-        </div>
+    
       </div>
     )
   }

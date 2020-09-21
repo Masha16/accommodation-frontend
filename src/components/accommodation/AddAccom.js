@@ -10,7 +10,7 @@ class AddAccom extends Component {
     const city = this.state.city;
     const size = this.state.size;
     const description = this.state.description;
-    axios.post("http://localhost:5000/api/accommodation", { postname, city, size, description })
+    axios.post("http://localhost:5000/api/accommodationcreate", { postname, city, size, description }, {withCredentials:true})
     .then( () => {
         // this.props.getData();
         this.setState({postname: "", city: "", size: "", description: ""});
