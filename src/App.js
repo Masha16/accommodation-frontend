@@ -8,6 +8,8 @@ import Signup from './components/auth/Signup'
 import { Switch, Route } from 'react-router-dom';
 import AuthService from './components/auth/auth-service';
 import Login from './components/auth/Login'
+import ProfilePage from './components/ProfilePage';
+import ProtectedRoute from './components/auth/protected-route';
 
 class App extends Component  {
   
@@ -42,11 +44,12 @@ class App extends Component  {
     if(this.state.loggedInUser){
       return (
         <div className="App">
-          <Navbar userInSession={this.state.loggedInUser} />
+          <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser} />
           <Switch>
-          <Route exact path="/accommodation" component={AccomList}/>
-          <Route exact path="/accommodationcreate" component={AddAccom}/>
-          <Route exact path="/accommodation/:id" component={AccomDetails} />
+          <Route user={this.state.loggedInUser} exact path="/accommodation" component={AccomList}/>
+          <Route user={this.state.loggedInUser} path="/accommodationcreate" component={AddAccom}/>
+          <ProtectedRoute user={this.state.loggedInUser} path="/accommodation/:id" component={AccomDetails} />
+          <ProtectedRoute user={this.state.loggedInUser} path="/profile" component={ProfilePage} />
           </Switch>
         </div>
       );
@@ -57,9 +60,10 @@ class App extends Component  {
           <Switch>
             <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
             <Route exact path='/' render={() => <Login getUser={this.getTheUser}/>}/>
-            <Route exact path="/accommodation" component={AccomList}/>
-            <Route exact path="/accommodationcreate" component={AddAccom}/>
-            <Route exact path="/accommodation/:id" component={AccomDetails} />
+            <Route user={this.state.loggedInUser} path="/accommodation" component={AccomList}/>
+            <Route user={this.state.loggedInUser} path="/accommodationcreate" component={AddAccom}/>
+            <ProtectedRoute user={this.state.loggedInUser} path="/accommodation/:id" component={AccomDetails} />
+            <ProtectedRoute  user={this.state.loggedInUser} path="/profile" component={ProfilePage} />
           </Switch>
         </div>
       );

@@ -17,11 +17,32 @@ class AccomList extends Component {
   componentDidMount() {
     this.getAllAccom();
   }
+
+  sortByPriceHL= ()=> {
+    const accomCopy = [...this.state.listOfAccom];
+    accomCopy.sort((a,b) => b.price-a.price)
+    this.setState({listOfAccom: accomCopy})
+    }
+
+  
+    sortByPriceLH= ()=> {
+      const accomCopy = [...this.state.listOfAccom];
+      accomCopy.sort((a,b) => a.price-b.price)
+      this.setState({listOfAccom: accomCopy})
+      }
+
+
+
  
   render(){
     return(
       <div>
-        <div style={{width: '60%', float:"left"}}>
+
+        <button onClick={this.sortByPriceHL}> Sort by price from high to low </button>
+        <button onClick={this.sortByPriceLH}> Sort by price from low to high</button>
+
+
+        <div>
           { this.state.listOfAccom.map( accom => {
             return (
               <div key={accom._id}>
@@ -30,6 +51,7 @@ class AccomList extends Component {
                 </Link>
                 <p>City: {accom.city}</p>
                   <p>Size: {accom.size}</p>
+                  <p>Price: {accom.price} </p>
                   <p>Brief description: {accom.description}</p>
                 <hr/>
               </div>

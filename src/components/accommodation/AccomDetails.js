@@ -62,7 +62,10 @@ class AccomDetails extends Component {
 
 
         ownershipCheck = (accommodation) => {
-          if(this.props.loggedInUser && accommodation.owner === this.props.loggedInUser._id){
+          // console.log(accommodation._id)
+          // console.log(this.props.loggedInUser._id)
+          
+          if(accommodation.owner === this.props.loggedInUser._id){
             return (
               <div>
                 <div>{this.renderEditForm()} </div>
@@ -83,7 +86,7 @@ class AccomDetails extends Component {
               <p>{this.state.description}</p>
               { this.state.requests && this.state.requests.map((request, index) => {
             return(
-                <div key={ index }>
+                <div>
                 
                     <Link to={`/accommodation/${this.state._id}/requests/${request._id}`}> 
                         { request.requestDesc}

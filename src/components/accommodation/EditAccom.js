@@ -7,6 +7,7 @@ class EditAccom extends Component {
     city: this.props.theAccom.city,
     size: this.props.theAccom.size,
     description: this.props.theAccom.description, 
+    price: this.props.theAccom.price,
     isShowing: false
   }
   
@@ -15,10 +16,11 @@ class EditAccom extends Component {
     const city = this.state.city;
     const size = this.state.size;
     const description = this.state.description;
+    const price = this.state.price
  
     event.preventDefault();
  
-    axios.put(`http://localhost:5000/api/accommodation/${this.props.theAccom._id}`, { postname, city, size, description }, {withCredentials:true})
+    axios.put(`http://localhost:5000/api/accommodation/${this.props.theAccom._id}`, { postname, city, size, description, price }, {withCredentials:true})
     .then( () => {
         this.props.getAllAccom();
     
@@ -59,6 +61,12 @@ class EditAccom extends Component {
     })
   }
 
+  handleChangePrice = (event) => {  
+    this.setState({
+      price:event.target.value
+    })
+  }
+
   showEditAccomPost = () => {
     if(this.state.isShowing){
         return(
@@ -76,6 +84,9 @@ class EditAccom extends Component {
 
           <label>Description:</label>
           <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+
+          <label>Price:</label>
+          <input type="text" name="price" value={this.state.size} onChange={e => this.handleChangePrice(e)}/>
           
           <input type="submit" value="Submit" />
         </form>

@@ -2,7 +2,7 @@
 import axios from 'axios';
  
 class AddAccom extends Component {
-  state = { postname: "", city: "", size: "", description: "" }
+  state = { postname: "", city: "", size: "", description: "", price: "" }
    
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -10,10 +10,11 @@ class AddAccom extends Component {
     const city = this.state.city;
     const size = this.state.size;
     const description = this.state.description;
-    axios.post("http://localhost:5000/api/accommodationcreate", { postname, city, size, description }, {withCredentials:true})
+    const price = this.state.price;
+    axios.post("http://localhost:5000/api/accommodationcreate", { postname, city, size, description, price }, {withCredentials:true})
     .then( () => {
         // this.props.getData();
-        this.setState({postname: "", city: "", size: "", description: ""});
+        this.setState({postname: "", city: "", size: "", description: "", price: ""});
     })
     .catch( error => console.log(error) )
   }
@@ -38,6 +39,9 @@ class AddAccom extends Component {
 
           <label>Description:</label>
           <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
+
+          <label>Price:</label>
+          <input type="text" name="price" value={this.state.price} onChange={ e => this.handleChange(e)}/>
           
           <input type="submit" value="Submit" />
         </form>
