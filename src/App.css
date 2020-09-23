@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,155 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.login {
+  background-color: #19585C;
+  height: 100vh;
+}
+
+
+
+.login-container {
+  width: 30%;
+  height: 325px;
+  position: fixed; 
+  top: 20%;
+  left: 33%;
+  text-align: center;
+}
+
+
+
+.login-container input {
+  font-weight: 700;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 20px;
+  border: 2px solid #A09C9C;
+  margin-bottom: 20px;
+  background-color: #EDEF8C;
+  color: #A09C9C;
+}
+
+
+.login-container p {
+  color:#EDEF8C;
+}
+
+.login-container p>a {
+ color: #EDEF8C;
+}
+
+#nav-bar a {
+  color: #EDEF8C; 
+  text-decoration: none;
+}
+
+
+#nav-bar {
+  background-color: #19585C;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  padding-top: 20px;  
+}
+
+.nav {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.left {
+  padding-left:20px;
+}
+
+.logout {
+  float: right;
+  padding: 0 auto;
+  margin-right: 20px;
+}
+
+.nav a>button {
+  font-weight: 600;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 2px solid #A09C9C;
+  margin-bottom: 20px;
+  background-color: #EDEF8C;
+  color: #A09C9C;
+}
+
+.welcome {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40px;
+}
+
+.sorting-buttons {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+  position: fixed;
+}
+
+.sorting {
+  text-align: center;  
+}
+
+.form-container {
+  margin: 0 auto;
+  text-align: center;
+  height:100vh;
+}
+
+
+
+.form-container input {
+  height: 20px;
+   width: 450px;
+   padding: 10px 20px;
+   text-align: center;
+   font-size: 16px;
+   background-color: #EEEEEE;
+   border: none; 
+   color:#19525B;
+   font-size: 20px;
+   margin-bottom: 10px;
+ }
+
+ .form-container textarea {
+  height: 150px;
+  width: 450px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #EEEEEE;
+  border: none;
+  color:#19525B;
+  font-size: 20px;
+}
+
+.form-container button {
+  display: inline;
+  border-radius: 4px;
+  background-color: #19525B;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px;
+  margin-top: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 40px;
+}
+.form-container label {
+  color:#636768;
+  font-size:16px;
 }

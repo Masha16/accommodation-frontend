@@ -26,23 +26,14 @@ class AddAccom extends Component {
  
   render(){
     return(
-      <div>
+      <div className="form-container">
         <form onSubmit={this.handleFormSubmit}>
-          <label>Name of the post:</label>
-          <input type="text" name="postname" value={this.state.postname} onChange={ e => this.handleChange(e)}/>
-
-          <label>City:</label>
-          <input type="text" name="city" value={this.state.city} onChange={ e => this.handleChange(e)}/>
-
-          <label>Size:</label>
-          <input type="text" name="size" value={this.state.size} onChange={ e => this.handleChange(e)}/>
-
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
-
-          <label>Price:</label>
-          <input type="text" name="price" value={this.state.price} onChange={ e => this.handleChange(e)}/>
           
+          <input type="text" name="postname" placeholder="Name of the post" value={this.state.postname} onChange={ e => this.handleChange(e)}/><br/>
+          <input type="text" name="city" placeholder="City" value={this.state.city} onChange={ e => this.handleChange(e)}/><br/>
+          <input type="text" name="size" placeholder="Size" value={this.state.size} onChange={ e => this.handleChange(e)}/><br/>
+          <textarea name="description" placeholder="Description" value={this.state.description} onChange={ e => this.handleChange(e)} /><br/>
+          <input type="text" name="price" placeholder="Price" value={this.state.price} onChange={ e => this.handleChange(e)}/><br/>
           <input type="submit" value="Submit" />
         </form>
       </div>

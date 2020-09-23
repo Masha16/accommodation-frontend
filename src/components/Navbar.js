@@ -23,31 +23,31 @@ class navbar extends Component {
   render () {
     if(this.state.loggedInUser){
       return(
-        <nav className="nav-style">
-          <ul>
-            <li>Welcome, {this.state.loggedInUser.username}</li>
-           
-            <li><Link to="/accommodation" style={{ textDecoration: 'none' }}>Available accommodation</Link></li>
-            <li><Link to="/accommodationcreate" style={{ textDecoration: 'none' }}>Make a new accommodation</Link></li>
-            <li><Link to="/profile" style={{ textDecoration: 'none' }}>Profile page</Link></li>
-            <li>
-              <Link to='/'>
-                <button onClick={() => this.logoutUser()}>Logout</button>
-              </Link>
-            </li>
-        
+        <div>
+        <nav id="nav-bar">
           
-          </ul>
+            <div className="nav">
+           
+            <Link to="/accommodation" className="left">Available accommodation</Link>
+            <Link to="/accommodationcreate" className="left">Make a new accommodation</Link>
+            <Link to="/profile" className="left">Profile page</Link>
+            
+              <Link to='/'>
+                <button className="logout" onClick={() => this.logoutUser()}>Logout</button>
+              </Link>
+              </div>
         </nav>
+        <p className="welcome">Welcome, {this.state.loggedInUser.username}!</p>
+        </div>
       )
     } else {
       return (
         <div>
-        <nav className="nav-style">
+        {/* <nav className="nav-style">
           <ul>
             <li><Link to='/signup' style={{ textDecoration: 'none' }}>Signup</Link></li>
           </ul>
-        </nav>
+        </nav> */}
         </div>
       )
     }

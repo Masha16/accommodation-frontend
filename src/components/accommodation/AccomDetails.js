@@ -81,9 +81,10 @@ class AccomDetails extends Component {
           return(
             <div>
               <h1>{this.state.postname}</h1>
-              <p>{this.state.city} </p>
-              <p>{this.state.size} </p>
-              <p>{this.state.description}</p>
+              <p>City: {this.state.city} </p>
+              <p>Size: {this.state.size} </p>
+              <p>Price: {this.state.price} </p>
+              <p> {this.state.description}</p>
               { this.state.requests && this.state.requests.map((request, index) => {
             return(
                 <div>

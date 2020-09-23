@@ -38,11 +38,13 @@ class AccomList extends Component {
     return(
       <div>
 
-        <button onClick={this.sortByPriceHL}> Sort by price from high to low </button>
-        <button onClick={this.sortByPriceLH}> Sort by price from low to high</button>
+        <div className="sorting-buttons">
+        <button className="sorting" onClick={this.sortByPriceHL}> Sort by price from high to low </button>
+        <button className="sorting" onClick={this.sortByPriceLH}> Sort by price from low to high</button>
+        </div>
 
 
-        <div>
+        <div className="accommodation-post">
           { this.state.listOfAccom.map( accom => {
             return (
               <div key={accom._id}>
