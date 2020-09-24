@@ -69,7 +69,7 @@ class AccomDetails extends Component {
             return (
               <div>
                 <div>{this.renderEditForm()} </div>
-                <button onClick={() => this.deleteAccom(this.state._id)}>Delete accommodation post</button>
+                <button className="button-details" onClick={() => this.deleteAccom(this.state._id)}>Delete accommodation post</button>
               </div>
             )
           } 
@@ -81,9 +81,10 @@ class AccomDetails extends Component {
           return(
             <div>
               <h1>{this.state.postname}</h1>
-              <p>City: {this.state.city} </p>
-              <p>Size: {this.state.size} </p>
-              <p>Price: {this.state.price} </p>
+              <img src={this.state.imageUrl} alt="" className="image-details" /> 
+              <p> <b>City:</b> {this.state.city} </p>
+              <p><b>Size:</b>  {this.state.size} sq.m.</p>
+              <p><b>Price:</b>  {this.state.price} Euro</p>
               <p> {this.state.description}</p>
               { this.state.requests && this.state.requests.map((request, index) => {
             return(
@@ -99,7 +100,7 @@ class AccomDetails extends Component {
               <div >
               {this.ownershipCheck(this.state)}
               </div>
-              <br/>
+              
              <div>{this.renderAddRequestForm()} </div>
               
               <br/>

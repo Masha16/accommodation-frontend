@@ -28,28 +28,22 @@ class ProfilePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="accommodation-post">
+                
                 {this.state.listOfAccom ? this.state.listOfAccom.map((accom, index) => ( <div key={index}>
+                <br/>
+                <hr />
                   <h3>{accom.postname}</h3>
-                  <p>City: {accom.city}</p>
-                  <p>Size: {accom.size}</p>
-                  <p>Price: {accom.price}</p>
-                  <p>Brief description: {accom.description}</p>
-                <hr/>
-              </div>)) : null}                
-              {/* {this.state.listOfAccom.map(accom => {
-            return (
-              <div>
-                  <h3>{accom.postname}</h3>
-                  <p>City: {accom.city}</p>
-                  <p>Size: {accom.size}</p>
-                  <p>Price: {accom.price}</p>
-                  <p>Brief description: {accom.description}</p>
-                <hr/>
-              </div>
-            )})} */}
-
-        <h1> Hello from {this.props.loggedInUser.username} </h1>
+                  <img src={accom.imageUrl} alt="/" className="image-list"/>
+                  <p> <span>{accom.city}</span> 
+                   <span>{accom.size} sq.m.</span>
+                   <span>{accom.price} Euro</span></p>
+                    <br />
+                  <p>{accom.description}</p>
+                  <br/>
+                  
+              </div>)) : null}  
+                           
             </div>
             
         )

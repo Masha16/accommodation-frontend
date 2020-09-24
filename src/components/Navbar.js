@@ -32,7 +32,7 @@ class navbar extends Component {
             <Link to="/accommodationcreate" className="left">Make a new accommodation</Link>
             <Link to="/profile" className="left">Profile page</Link>
             
-              <Link to='/'>
+              <Link  to='/'>
                 <button className="logout" onClick={() => this.logoutUser()}>Logout</button>
               </Link>
               </div>

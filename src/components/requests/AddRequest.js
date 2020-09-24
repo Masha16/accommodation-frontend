@@ -41,9 +41,9 @@ class AddRequest extends Component {
         return(
             <div>
                   <h3>Add Request</h3>
-                  <form onSubmit={this.handleFormSubmit}>
-                  <label>Write your request here:</label>
-                  <textarea name="requestDesc" value={this.state.requestDesc} onChange={ e => this.handleChange(e)} />
+                  <form onSubmit={this.handleFormSubmit} className="request-container">
+                   
+                  <textarea name="requestDesc" placeholder="Write your request for this accommodation here..." value={this.state.requestDesc} onChange={ e => this.handleChange(e)} /> <br/>
                   
                   <input type="submit" value="Submit" />
                   </form>
@@ -56,7 +56,7 @@ class AddRequest extends Component {
     return(
       <div>
             <hr/>
-            <button onClick={() => this.toggleForm()}> Add request for this accommodation </button>
+            <button className="button-details"  onClick={() => this.toggleForm()}> Add request for this accommodation </button>
             { this.showAddRequestForm() }
       </div>
     )

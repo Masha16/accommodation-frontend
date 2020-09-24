@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import LikeButton from "./LikeButton"
  
 class AccomList extends Component {
   state = { listOfAccom: [] }
@@ -36,12 +37,12 @@ class AccomList extends Component {
  
   render(){
     return(
-      <div>
+      <div className="accom-list" >
 
-        <div className="sorting-buttons">
-        <button className="sorting" onClick={this.sortByPriceHL}> Sort by price from high to low </button>
-        <button className="sorting" onClick={this.sortByPriceLH}> Sort by price from low to high</button>
-        </div>
+        
+        <button className="sorting-left" onClick={this.sortByPriceHL}> Sort by price from high to low </button>
+        <button className="sorting-right" onClick={this.sortByPriceLH}> Sort by price from low to high</button>
+        
 
 
         <div className="accommodation-post">
@@ -51,10 +52,14 @@ class AccomList extends Component {
                 <Link to={`/accommodation/${accom._id}`}>
                   <h3>{accom.postname}</h3>
                 </Link>
-                <p>City: {accom.city}</p>
-                  <p>Size: {accom.size}</p>
-                  <p>Price: {accom.price} </p>
-                  <p>Brief description: {accom.description}</p>
+                <img src={accom.imageUrl} alt="/" className="image-list"/>
+                <p> <span>{accom.city}</span> 
+                   <span>{accom.size} sq.m.</span>
+                   <span>{accom.price} Euro</span></p>
+                    <br />
+                  <p>{accom.description}</p>
+                  <LikeButton />
+                  <br/>
                 <hr/>
               </div>
             )})
