@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ListAccom from './accommodation/ListAccom'
+
 
 class ProfilePage extends Component {
     state = {}

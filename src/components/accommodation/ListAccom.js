@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import LikeButton from "./LikeButton"
+
  
 class AccomList extends Component {
   state = { listOfAccom: [] }
@@ -58,7 +58,7 @@ class AccomList extends Component {
                    <span>{accom.price} Euro</span></p>
                     <br />
                   <p>{accom.description}</p>
-                  <LikeButton />
+                  
                   <br/>
                 <hr/>
               </div>
