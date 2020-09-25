@@ -6,7 +6,7 @@ class ProfilePage extends Component {
     state = {}
 
         getOwnPost = () => {
-            const { params } = this.props.match;
+            // const { params } = this.props.match;
             console.log(this.props.loggedInUser._id)
             axios.get(`http://localhost:5000/api/profile/${this.props.loggedInUser._id}`, {withCredentials:true})
             .then(accommodation => {
